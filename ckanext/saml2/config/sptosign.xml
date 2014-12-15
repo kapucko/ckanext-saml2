@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:EntityDescriptor xmlns:ns0="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ns1="http://www.w3.org/2000/09/xmldsig#" entityID="http://edem.microcomp.sk">
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+  <SignedInfo>
+    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+    <Reference URI="">
+      <Transforms>
+        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+      </Transforms>
+      <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+      <DigestValue />
+    </Reference>
+    </SignedInfo>
+  <SignatureValue />
+  <KeyInfo>
+    <X509Data />
+  </KeyInfo>
+</Signature> 
+<ns0:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><ns0:KeyDescriptor use="encryption"><ns1:KeyInfo><ns1:X509Data><ns1:X509Certificate>MIIDGjCCAoOgAwIBAgIJAL2eP7DkWXXRMA0GCSqGSIb3DQEBCwUAMIGlMQswCQYD
+VQQGEwJTSzETMBEGA1UECAwKQnJhdGlzbGF2YTETMBEGA1UEBwwKQnJhdGlzbGF2
+YTESMBAGA1UECgwJTWljcm9jb21wMRQwEgYDVQQLDAtEZXZlbG9wbWVudDEaMBgG
+A1UEAwwRZWRlbS5taWNyb2NvbXAuc2sxJjAkBgkqhkiG9w0BCQEWF2thcGlzaW5z
+a3lAbWljcm9jb21wLnNrMB4XDTE0MTIwOTEwNDM0M1oXDTE3MTIwODEwNDM0M1ow
+gaUxCzAJBgNVBAYTAlNLMRMwEQYDVQQIDApCcmF0aXNsYXZhMRMwEQYDVQQHDApC
+cmF0aXNsYXZhMRIwEAYDVQQKDAlNaWNyb2NvbXAxFDASBgNVBAsMC0RldmVsb3Bt
+ZW50MRowGAYDVQQDDBFlZGVtLm1pY3JvY29tcC5zazEmMCQGCSqGSIb3DQEJARYX
+a2FwaXNpbnNreUBtaWNyb2NvbXAuc2swgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJ
+AoGBAPWl31/7pBeen5dkKDisaQeXFdpfNL+hhF0oR4AAbP4VuLEtZsiTejjXHfa0
+3JFmmwOPT88t0qVH6N5K0r6qt5I2YsmEUCw8agyclI/7mkUHqDcjl7I+VS6EX6qZ
+KL6tHn5vankUssmaceNabs8qI7c+knHH9M0tS5OE3fTY1n1ZAgMBAAGjUDBOMB0G
+A1UdDgQWBBQ6OTWE6YXOPCciCyKuUF0F+9xx5TAfBgNVHSMEGDAWgBQ6OTWE6YXO
+PCciCyKuUF0F+9xx5TAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAGL3
+Bd0H6LnNeLhqRx9+P5eAFLQ3I4x0o8N+yTpreGNSJBD1Ec4MkvI/eg13ffS8UgKH
+NR47SjfaUxovfo2FLzywTItPxW4p9CxSR6jB+Fjm5u2vCX4dyylS46tMLiJ4vYQY
+uDnewnY0E+1cAt3gHObl4U/9CTptFE6oCS0kcR7K
+</ns1:X509Certificate></ns1:X509Data></ns1:KeyInfo></ns0:KeyDescriptor><ns0:KeyDescriptor use="signing"><ns1:KeyInfo><ns1:X509Data><ns1:X509Certificate>MIIDGjCCAoOgAwIBAgIJAL2eP7DkWXXRMA0GCSqGSIb3DQEBCwUAMIGlMQswCQYD
+VQQGEwJTSzETMBEGA1UECAwKQnJhdGlzbGF2YTETMBEGA1UEBwwKQnJhdGlzbGF2
+YTESMBAGA1UECgwJTWljcm9jb21wMRQwEgYDVQQLDAtEZXZlbG9wbWVudDEaMBgG
+A1UEAwwRZWRlbS5taWNyb2NvbXAuc2sxJjAkBgkqhkiG9w0BCQEWF2thcGlzaW5z
+a3lAbWljcm9jb21wLnNrMB4XDTE0MTIwOTEwNDM0M1oXDTE3MTIwODEwNDM0M1ow
+gaUxCzAJBgNVBAYTAlNLMRMwEQYDVQQIDApCcmF0aXNsYXZhMRMwEQYDVQQHDApC
+cmF0aXNsYXZhMRIwEAYDVQQKDAlNaWNyb2NvbXAxFDASBgNVBAsMC0RldmVsb3Bt
+ZW50MRowGAYDVQQDDBFlZGVtLm1pY3JvY29tcC5zazEmMCQGCSqGSIb3DQEJARYX
+a2FwaXNpbnNreUBtaWNyb2NvbXAuc2swgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJ
+AoGBAPWl31/7pBeen5dkKDisaQeXFdpfNL+hhF0oR4AAbP4VuLEtZsiTejjXHfa0
+3JFmmwOPT88t0qVH6N5K0r6qt5I2YsmEUCw8agyclI/7mkUHqDcjl7I+VS6EX6qZ
+KL6tHn5vankUssmaceNabs8qI7c+knHH9M0tS5OE3fTY1n1ZAgMBAAGjUDBOMB0G
+A1UdDgQWBBQ6OTWE6YXOPCciCyKuUF0F+9xx5TAfBgNVHSMEGDAWgBQ6OTWE6YXO
+PCciCyKuUF0F+9xx5TAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4GBAGL3
+Bd0H6LnNeLhqRx9+P5eAFLQ3I4x0o8N+yTpreGNSJBD1Ec4MkvI/eg13ffS8UgKH
+NR47SjfaUxovfo2FLzywTItPxW4p9CxSR6jB+Fjm5u2vCX4dyylS46tMLiJ4vYQY
+uDnewnY0E+1cAt3gHObl4U/9CTptFE6oCS0kcR7K
+</ns1:X509Certificate></ns1:X509Data></ns1:KeyInfo></ns0:KeyDescriptor><ns0:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://edem.microcomp.sk/slo" /><ns0:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://edem.microcomp.sk" index="1" /><ns0:AttributeConsumingService index="1"><ns0:ServiceName xml:lang="en" /><ns0:ServiceDescription xml:lang="en">CKAN saml2 auth</ns0:ServiceDescription><ns0:RequestedAttribute FriendlyName="uid" Name="urn:oid:0.9.2342.19200300.100.1.1" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" isRequired="true" /></ns0:AttributeConsumingService></ns0:SPSSODescriptor></ns0:EntityDescriptor>

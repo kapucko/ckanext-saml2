@@ -107,7 +107,22 @@ class Saml2Plugin(p.SingletonPlugin):
         # Can we find the user?
         c = p.toolkit.c
         environ = p.toolkit.request.environ
+        log.info('---environ---')
+        log.info(environ)
         user = environ.get('REMOTE_USER', '')
+        log.info('user')
+        log.info(user)
+        #log.info("repoze.who.identity: '%s'" % environ.get("repoze.who.identity", ""))
+        i = environ.get("repoze.who.identity", "")
+        if i:
+        #    log.info(dir(i))
+            log.info(i.viewkeys())
+        #    log.info(i['repoze.who.userid'])
+            log.info(i['user'])
+            log.info(i.get('userdata', 'no user data'))
+        if not user:
+            user = environ.get("repoze.who.identity", "")
+            log.info("repoze.who.identity: '%s'" % user)
         if user:
             # we need to get the actual user info from the saml2auth client
             if not self.saml_identify:
@@ -118,30 +133,35 @@ class Saml2Plugin(p.SingletonPlugin):
                     return
                 saml_client = saml_plugin.saml_client
                 self.saml_identify = saml_client.users.get_identity
-            try:
-                saml_info = self.saml_identify(user)[0]
-            except KeyError:
-                # we don't know the user stale cookies
-                saml_info = None
 
+            identity = environ.get("repoze.who.identity", {})
+            user_data = identity.get("user", {})
             # If we are here but no info then we need to clean up
-            if not saml_info:
+            if not user_data:
                 delete_cookies()
                 h.redirect_to(controller='user', action='logged_out')
-
-            c.user = saml_info['name'][0]
+            
+            log.info('---getting name---')
+            c.user = user_data['actor_username'][0]
             c.userobj = model.User.get(c.user)
 
             if c.userobj is None:
                 # Create the user
                 data_dict = {
                     'password': self.make_password(),
+                    'name' : user_data['actor_username'][0],
+                    'email' : user_data['actor_email'][0],
+                    'fullname' : user_data['actor_formatted_name'][0],
+                    'id' : user_data['actor_upvs_identity_id'][0]
                 }
-                self.update_data_dict(data_dict, self.user_mapping, saml_info)
+                #self.update_data_dict(data_dict, self.user_mapping, saml_info)
                 # Update the user schema to allow user creation
                 user_schema = schema.default_user_schema()
+                log.info('---schema---')
+                log.info(user_schema)
                 user_schema['id'] = [p.toolkit.get_validator('not_empty')]
                 user_schema['name'] = [p.toolkit.get_validator('not_empty')]
+                user_schema['email'] = [p.toolkit.get_validator('ignore_missing')]
 
                 context = {'schema' : user_schema, 'ignore_auth': True}
                 user = p.toolkit.get_action('user_create')(context, data_dict)
@@ -149,9 +169,9 @@ class Saml2Plugin(p.SingletonPlugin):
 
             # check if this is the first time we are authorized
             # If so check the users org is done
-            if 'user' in environ.get('repoze.who.identity',{}):
-                if self.organization_mapping['name'] in saml_info:
-                    self.create_organization(saml_info)
+            #if 'user' in environ.get('repoze.who.identity',{}):
+            #    if self.organization_mapping['name'] in saml_info:
+            #        self.create_organization(saml_info)
 
     def create_organization(self, saml_info):
         org_name = saml_info[self.organization_mapping['name']][0]
@@ -219,11 +239,18 @@ class Saml2Plugin(p.SingletonPlugin):
         environ = p.toolkit.request.environ
         subject_id = environ["repoze.who.identity"]['repoze.who.userid']
         client = environ['repoze.who.plugins']["saml2auth"]
-        saml_logout = client.saml_client.global_logout(subject_id)
+        saml_logout = client.saml_client.global_logout(subject_id, sign=True)
+        log.info('rememberer_name')
+        log.info(client.rememberer_name)
         rem = environ['repoze.who.plugins'][client.rememberer_name]
         rem.forget(environ, subject_id)
         # do the redirect the url is in the saml_logout
-        h.redirect_to(saml_logout[2][0][1])
+        log.info('---saml_logout---')
+        log.info(saml_logout)
+        help = saml_logout[saml_logout.keys()[0]][1]
+        url = help['headers'][0][1].replace(' ', '')
+        log.info(url)
+        h.redirect_to(url)
 
     def abort(self, status_code, detail, headers, comment):
         # HTTP Status 401 causes a login redirect.  We need to prevent this
@@ -261,6 +288,7 @@ class Saml2Controller(base.BaseController):
             saml_req = p.toolkit.request.GET.get('SAMLRequest', '')
 
             if saml_req:
+                log.info('SAML REQUEST for logout recieved')
                 get = p.toolkit.request.GET
                 subject_id = environ["repoze.who.identity"]['repoze.who.userid']
                 headers, success = client.saml_client.do_http_redirect_logout(get, subject_id)

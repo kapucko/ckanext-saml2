@@ -1,18 +1,31 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<ns0:EntitiesDescriptor xmlns:ns0="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ns1="http://www.w3.org/2000/09/xmldsig#"><ns0:EntityDescriptor entityID="urn:mace:umu.se:saml:ckan:idp"><ns0:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><ns0:KeyDescriptor use="signing"><ns1:KeyInfo><ns1:X509Data><ns1:X509Certificate>MIIC8jCCAlugAwIBAgIJAJHg2V5J31I8MA0GCSqGSIb3DQEBBQUAMFoxCzAJBgNV
-BAYTAlNFMQ0wCwYDVQQHEwRVbWVhMRgwFgYDVQQKEw9VbWVhIFVuaXZlcnNpdHkx
-EDAOBgNVBAsTB0lUIFVuaXQxEDAOBgNVBAMTB1Rlc3QgU1AwHhcNMDkxMDI2MTMz
-MTE1WhcNMTAxMDI2MTMzMTE1WjBaMQswCQYDVQQGEwJTRTENMAsGA1UEBxMEVW1l
-YTEYMBYGA1UEChMPVW1lYSBVbml2ZXJzaXR5MRAwDgYDVQQLEwdJVCBVbml0MRAw
-DgYDVQQDEwdUZXN0IFNQMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDkJWP7
-bwOxtH+E15VTaulNzVQ/0cSbM5G7abqeqSNSs0l0veHr6/ROgW96ZeQ57fzVy2MC
-FiQRw2fzBs0n7leEmDJyVVtBTavYlhAVXDNa3stgvh43qCfLx+clUlOvtnsoMiiR
-mo7qf0BoPKTj7c0uLKpDpEbAHQT4OF1HRYVxMwIDAQABo4G/MIG8MB0GA1UdDgQW
-BBQ7RgbMJFDGRBu9o3tDQDuSoBy7JjCBjAYDVR0jBIGEMIGBgBQ7RgbMJFDGRBu9
-o3tDQDuSoBy7JqFepFwwWjELMAkGA1UEBhMCU0UxDTALBgNVBAcTBFVtZWExGDAW
-BgNVBAoTD1VtZWEgVW5pdmVyc2l0eTEQMA4GA1UECxMHSVQgVW5pdDEQMA4GA1UE
-AxMHVGVzdCBTUIIJAJHg2V5J31I8MAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEF
-BQADgYEAMuRwwXRnsiyWzmRikpwinnhTmbooKm5TINPE7A7gSQ710RxioQePPhZO
-zkM27NnHTrCe2rBVg0EGz7QTd1JIwLPvgoj4VTi/fSha/tXrYUaqc9AqU1kWI4WN
-+vffBGQ09mo+6CffuFTZYeOhzP/2stAPwCTU4kxEoiy0KpZMANI=
-</ns1:X509Certificate></ns1:X509Data></ns1:KeyInfo></ns0:KeyDescriptor><ns0:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8088/logout" /><ns0:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:8088/sso" /></ns0:IDPSSODescriptor><ns0:Organization><ns0:OrganizationName xml:lang="en">CKAN Identiteter</ns0:OrganizationName><ns0:OrganizationDisplayName xml:lang="en">CKAN Identiteter</ns0:OrganizationDisplayName><ns0:OrganizationURL xml:lang="en">http://www.example.com</ns0:OrganizationURL></ns0:Organization></ns0:EntityDescriptor></ns0:EntitiesDescriptor>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" ID="id-nGNi9fC-3HvFn-zRF7ZkIEU51zM-" cacheDuration="P0Y0M30DT0H0M0.0S" entityID="idp:auth.vyvoj.upvs.globaltel.sk" validUntil="2015-01-08T10:00:48Z"><md:IDPSSODescriptor WantAuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"><dsig:X509Data><dsig:X509Certificate>MIICvDCCAaQCCQCz5yNX6SzaBzANBgkqhkiG9w0BAQUFADAgMR4wHAYDVQQDExVp
+ZHAudXB2c3Atdnl2b2oubG9jYWwwHhcNMTQxMDAyMTQ1NzA0WhcNMTcxMDAyMTQ1
+NzA0WjAgMR4wHAYDVQQDExVpZHAudXB2c3Atdnl2b2oubG9jYWwwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQC1Ex+uUFChjshC+jYKliteioSDKAPV90/C
+GEq7+sWSCft56tPwaAZX/I8lSZt7DjNtUxMYRuFXLqHhbPlAIlg7wgvnR5/3UdJq
+MCSz/9LdPLUFuMchlfxrkNatDdqrn+ANCvKmQHMw/MmyPTxfRBzz61Dfr2k3nIl7
+iV0+Ga4OqiCaG+Op2SfuZ+tJJ7H1v4RKKEVFx6koS5/KdbMLC70gbHA6MyQrBeP4
+juNpcEh3OG0ki1zVZpU9rObOfxR192nRS4BIUc9OegLXCuEjxlhcp/rM3sFGIBES
+GfzF6OkmXPEQjal5tLmreJsPplcwfpa9kJ3PZkNxKSI9Nqr4NdiJAgMBAAEwDQYJ
+KoZIhvcNAQEFBQADggEBAGU78Q2gQRIRNXUbjnN0Pt9X4xFvltggna2s/4lmlg8U
+loJfXudqSqqLsxGf3FFXRkIfZlaHbCkWbEvu7HM0mDBI3Tf+/HF9O4C6LLnACMSS
+r8WOjKI3XGHEy20tDWCTnMH4ayuH86HBO13HWIOZRYzfjcIEU+okSWPlzMGV3qSG
+tFsN9S1hEXpvgBjHZhVfdIQKe5qnT7AA5BQye1xwphz+r+RdIhKIK7a7PN50p3nG
+DC5loAUsA+FQn3A7f+qHpxvvjX9pudRfV4LZoZiq3ZClo/ChNTURRbkp3hycB0x9
+Q/OLKy+LRBNN3i6r5JNRt5i7lFzBOXgDMXtQFkn4cTs=
+</dsig:X509Certificate><dsig:X509IssuerSerial><dsig:X509IssuerName>CN=idp.upvsp-vyvoj.local</dsig:X509IssuerName><dsig:X509SerialNumber>12963368912890419719</dsig:X509SerialNumber></dsig:X509IssuerSerial><dsig:X509SubjectName>CN=idp.upvsp-vyvoj.local</dsig:X509SubjectName></dsig:X509Data></dsig:KeyInfo></md:KeyDescriptor><md:KeyDescriptor use="encryption"><dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"><dsig:X509Data><dsig:X509Certificate>MIICvDCCAaQCCQCz5yNX6SzaBzANBgkqhkiG9w0BAQUFADAgMR4wHAYDVQQDExVp
+ZHAudXB2c3Atdnl2b2oubG9jYWwwHhcNMTQxMDAyMTQ1NzA0WhcNMTcxMDAyMTQ1
+NzA0WjAgMR4wHAYDVQQDExVpZHAudXB2c3Atdnl2b2oubG9jYWwwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQC1Ex+uUFChjshC+jYKliteioSDKAPV90/C
+GEq7+sWSCft56tPwaAZX/I8lSZt7DjNtUxMYRuFXLqHhbPlAIlg7wgvnR5/3UdJq
+MCSz/9LdPLUFuMchlfxrkNatDdqrn+ANCvKmQHMw/MmyPTxfRBzz61Dfr2k3nIl7
+iV0+Ga4OqiCaG+Op2SfuZ+tJJ7H1v4RKKEVFx6koS5/KdbMLC70gbHA6MyQrBeP4
+juNpcEh3OG0ki1zVZpU9rObOfxR192nRS4BIUc9OegLXCuEjxlhcp/rM3sFGIBES
+GfzF6OkmXPEQjal5tLmreJsPplcwfpa9kJ3PZkNxKSI9Nqr4NdiJAgMBAAEwDQYJ
+KoZIhvcNAQEFBQADggEBAGU78Q2gQRIRNXUbjnN0Pt9X4xFvltggna2s/4lmlg8U
+loJfXudqSqqLsxGf3FFXRkIfZlaHbCkWbEvu7HM0mDBI3Tf+/HF9O4C6LLnACMSS
+r8WOjKI3XGHEy20tDWCTnMH4ayuH86HBO13HWIOZRYzfjcIEU+okSWPlzMGV3qSG
+tFsN9S1hEXpvgBjHZhVfdIQKe5qnT7AA5BQye1xwphz+r+RdIhKIK7a7PN50p3nG
+DC5loAUsA+FQn3A7f+qHpxvvjX9pudRfV4LZoZiq3ZClo/ChNTURRbkp3hycB0x9
+Q/OLKy+LRBNN3i6r5JNRt5i7lFzBOXgDMXtQFkn4cTs=
+</dsig:X509Certificate><dsig:X509IssuerSerial><dsig:X509IssuerName>CN=idp.upvsp-vyvoj.local</dsig:X509IssuerName><dsig:X509SerialNumber>12963368912890419719</dsig:X509SerialNumber></dsig:X509IssuerSerial><dsig:X509SubjectName>CN=idp.upvsp-vyvoj.local</dsig:X509SubjectName></dsig:X509Data></dsig:KeyInfo><md:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-1_5"/><md:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc"/><md:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes192-cbc"/><md:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc"/><md:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc"/></md:KeyDescriptor><md:ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://auth.vyvoj.upvs.globaltel.sk/fed/idp/soap" index="1" isDefault="true"/><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://auth.vyvoj.upvs.globaltel.sk/fed/idp/samlv20" ResponseLocation="https://auth.vyvoj.upvs.globaltel.sk/fed/idp/samlv20"/><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://auth.vyvoj.upvs.globaltel.sk/fed/idp/samlv20" ResponseLocation="https://auth.vyvoj.upvs.globaltel.sk/fed/idp/samlv20"/><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://auth.vyvoj.upvs.globaltel.sk/fed/idp/samlv20"/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://auth.vyvoj.upvs.globaltel.sk/fed/idp/samlv20"/></md:IDPSSODescriptor></md:EntityDescriptor>
